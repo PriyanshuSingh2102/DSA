@@ -1,23 +1,17 @@
 class Solution {
     public int lengthOfLastWord(String s) {
-      Stack<String> stack = new Stack<>(); 
-      String word="";
-     for (int i = 0; i < s.length(); i++) {
+        int size = s.length() - 1;
+        int count = 0;
 
-            if (s.charAt(i) != ' ') {
-                word += s.charAt(i);
-            } else {
-                if (!word.equals("")) {
-                    stack.push(word);
-                    word = "";
-                }
+        while (size >= 0) {
+            if (s.charAt(size) != ' ') {
+                count++;
+            } else if (count > 0) {
+                break;
             }
+            size--;
         }
 
-        // Push the last word if it exists
-        if (!word.equals("")) {
-            stack.push(word);
-        }
-      return((stack.peek()).length());  
+        return count;
     }
 }
