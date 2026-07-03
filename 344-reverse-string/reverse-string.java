@@ -5,6 +5,7 @@ class Solution {
         char t=s[left];
         s[left]=s[right];
         s[right]=t;
+        
         left++;
         right--;
      }
