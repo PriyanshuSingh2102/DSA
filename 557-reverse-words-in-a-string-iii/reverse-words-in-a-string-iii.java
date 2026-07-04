@@ -7,12 +7,9 @@ class Solution {
             if(ch!=' '){
             str=ch+str;}
             else{
-             if(i!=s.length()-1)
             str1=str1+str+" ";
-            else 
-            str1=str1+str;
             str="";
         }}
-        return str1;
+        return str1.trim();
     }
 }
