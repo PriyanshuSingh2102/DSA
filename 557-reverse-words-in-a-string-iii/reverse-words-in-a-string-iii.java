@@ -5,11 +5,13 @@ class Solution {
         for(int i=0;i<s.length();i++){
             char ch=s.charAt(i); 
             if(ch!=' '){
-            str=ch+str;}
+            str=ch+str;
+            }
             else{
             str1=str1+str+" ";
             str="";
-        }}
+        }
+        }
         return str1.trim();
     }
 }
