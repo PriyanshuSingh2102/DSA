@@ -1,0 +1,33 @@
+import java.util.*;
+
+class Solution {
+    public int[] frequencySort(int[] nums) {
+        Map<Integer, Integer> freq = new HashMap<>();
+
+        // Count frequency
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+
+        // Convert to Integer[] for custom sorting
+        Integer[] arr = new Integer[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            arr[i] = nums[i];
+        }
+
+        // Sort by frequency, then by value (descending)
+        Arrays.sort(arr, (a, b) -> {
+            if (freq.get(a).equals(freq.get(b))) {
+                return b - a;
+            }
+            return freq.get(a) - freq.get(b);
+        });
+
+        // Convert back to int[]
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = arr[i];
+        }
+
+        return nums;
+    }
+}
