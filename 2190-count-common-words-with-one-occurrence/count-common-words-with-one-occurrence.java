@@ -5,7 +5,6 @@ class Solution {
         int[] freq = new int[words1.length];
         int[] freq1 = new int[words2.length];
 
-        // Frequency of words in words1
         for (int i = 0; i < words1.length; i++) {
             int c = 0;
             for (int j = 0; j < words1.length; j++) {
@@ -14,8 +13,6 @@ class Solution {
             }
             freq[i] = c;
         }
-
-        // Frequency of words in words2
         for (int i = 0; i < words2.length; i++) {
             int c = 0;
             for (int j = 0; j < words2.length; j++) {
