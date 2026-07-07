@@ -1,18 +1,13 @@
 class Solution {
     public String sortSentence(String s) {
-        String res = "";
-        String[] str = s.split(" ");
-
-        for (int j = 1; j <= str.length; j++) {
-            for (int i = 0; i < str.length; i++) {
-                String str1 = str[i];
-
-                if (Character.getNumericValue(str1.charAt(str1.length() - 1)) == j) {
-                    res += str1.substring(0, str1.length() - 1) + " ";
-                }
-            }
+        String[] words = s.split(" ");
+        String[] ans = new String[words.length];
+        
+        for (String word : words) {
+            int len = word.length();
+            int index = word.charAt(len - 1) - '1';
+            ans[index] = word.substring(0, len - 1);
         }
-
-        return res.trim();
-    }
-}
+        
+        return String.join(" ", ans);
+    }}
