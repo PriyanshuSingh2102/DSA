@@ -22,7 +22,6 @@ class Solution {
             freq1[i] = c;
         }
 
-        // Count words appearing exactly once in both arrays
         for (int i = 0; i < words1.length; i++) {
             if (freq[i] == 1) {
                 for (int j = 0; j < words2.length; j++) {
