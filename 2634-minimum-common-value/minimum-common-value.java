@@ -1,18 +1,16 @@
-import java.util.Arrays;
-
 class Solution {
     public int getCommon(int[] nums1, int[] nums2) {
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
+        int i = 0, j = 0;
 
-        for (int i = 0; i < nums1.length; i++) {
-            for (int j = 0; j < nums2.length; j++) {
-                if (nums1[i] == nums2[j]) {
-                    return nums1[i];
-                }
-                if (nums2[j] > nums1[i]) {
-                    break;
-                }
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                return nums1[i];
+            }
+
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else {
+                j++;
             }
         }
 
