@@ -6,6 +6,7 @@ class Solution {
             int digit = x % 10;
             x = x / 10;
 
+            // Overflow check
             if (rev > Integer.MAX_VALUE / 10 ||
                (rev == Integer.MAX_VALUE / 10 && digit > 7))
                 return 0;
